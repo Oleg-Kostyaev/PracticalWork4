@@ -7,12 +7,14 @@ public class Task46 {
         System.out.println("Введите целое число:");
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
+
+        number = number < 0 ? -number : number;
+
         int sumSquaresDigits = 0;
-        int digit;
         while (number>0){
-            digit = number%10;
-            number = number / 10;
-            sumSquaresDigits = sumSquaresDigits + digit*digit;
+            int digit = number%10;
+            number /= 10;
+            sumSquaresDigits += digit*digit;
         }
         System.out.print("Cумма квадратов цифр введенного числа: ");
         System.out.println(sumSquaresDigits);
